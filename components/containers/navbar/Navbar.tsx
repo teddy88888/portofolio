@@ -4,7 +4,7 @@ import { div, nav } from "motion/react-client";
 import menu from "../../public/menu.png";
 export default function navbar() {
   return (
-    <nav className="sticky p-4 mask-b-to-gray-900">
+    <nav className="sticky p-4 ">
       <div className="flex items-center space-x-4">
         <div>
           <Image

@@ -3,16 +3,12 @@ import Navbar from "../components/containers/navbar/Navbar";
 import Hero from "../components/containers/hero/Hero";
 export default function Home() {
   return (
-    <main>
-      <section id="hero">
-      <Hero />
-
-      </section>
+    <main >
       <Navbar />
-     
-
-     
-       
+      <section id="hero"
+      className="sticky top-0">
+        <Hero />
+      </section>
     </main>
   );
 }
