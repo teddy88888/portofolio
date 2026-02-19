@@ -1,10 +1,10 @@
 import Image from "next/image";
 import profile from "../../public/profile.png";
 import { div, nav } from "motion/react-client";
-import menu from "../../public/menu.png";
+import menu from "../../public/menu.png"
 export default function navbar() {
   return (
-    <nav className="sticky p-4 ">
+    <nav className="sticky p-4 absolute top-0 z-10 bg-purple-950/50 backdrop-blur-sm w-full">
       <div className="flex items-center space-x-4">
         <div>
           <Image
