@@ -71,11 +71,11 @@ const technologies = [
 
 export default function About() {
   return (
-    <main className="p-4 mt-16 bg-white h-800 absolute mt-8 w-full ">
-      <div className="flex flex-col gap-4 items-center mb-4">
+    <main className="p-4  mt-16 h-500 bg-white w-100 md:w-315 flex flex-col items-center justify-center">
+      <div className=" flex flex-col gap-4 items-center mb-4">
         <button
           variant={"outline"}
-          className="bg- w-22 font-extrabold hover:bg-amber-200 transition-colors border border-amber-950 h-12 text-xl text-black rounded-2xl mt-4 "
+          className=" w-22 font-extrabold hover:bg-amber-200 transition-colors border border-amber-950 h-12 text-xl text-black rounded-2xl mt-4 "
         >
           About
         </button>
@@ -83,8 +83,9 @@ export default function About() {
           The Developer Behind the Pixel
         </h1>
       </div>
-      <div className="mt-12  absolute">
-        <Card className="bg-blue-500 w-full flex flex-col w-90 h-106 md">
+      <div className="mt-12 w-90 md:w-full flex flex-col items-center justify-center ">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+        <Card className="bg-blue-500 w-full flex flex-col w-90 h-106 ">
           <CardHeader className="flex gap-4">
             <Image
               src="/profile.png" // Next.js otomatis melihat ke folder public
@@ -118,7 +119,7 @@ export default function About() {
             </p>
           </CardContent>
         </Card>
-        <Card className="mt-6 flex items-center bg-muted w-full w-90">
+        <Card className="mt-6 px-6 flex items-center bg-muted w-full w-90">
           <Image
             className=" "
             src="/developher.png"
@@ -127,6 +128,7 @@ export default function About() {
             height={249}
           />
         </Card>
+        </div>
         <Card className="mt-6 text-foreground bg-neutral-900 w-full w-90 ">
           <CardHeader>
             <div className="flex gap-4 items-center">
@@ -239,15 +241,7 @@ export default function About() {
           alt="letter" 
           />
         </button>
-        <Card className=" mt-4 flex items-center bg-muted w-full w-90">
-          <Image
-            className=" "
-            src="/developher.png"
-            alt="developher"
-            width={249}
-            height={249}
-          />
-        </Card>
+        
       </div>
     </main>
   );

@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <main className="mt-16 p-4 relative">
+    <main className=" p-4   bg-blue-900 w-full">
       <div className="flex flex-col gap-4">
         <h1 className="font-bold text-[44px]/12 text-white">
           <span className="text-black bg-amber-500">Crafting</span> Interfaces,
