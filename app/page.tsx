@@ -5,6 +5,8 @@ import About from "../components/containers/about/About";
 import Skillset from "../components/containers/skillset/Skillset";
 import Experience from "../components/containers/experience/Experience";
 import Portfolio from "../components/containers/portfolio/Portfolio";
+import WorkExperiece from "../components/containers/work-experience/WorkExperiece";
+import Testimonial from "../components/containers/testimonial/Testimonial";
 
 export default function Home() {
   return (
@@ -15,7 +17,7 @@ export default function Home() {
       </section>
       <section id=" about " className="absolute">
         <About />
-      </section>    
+      </section>
       <section id="skillset" className="mt-504 absolute">
         <Skillset />
       </section>
@@ -24,6 +26,12 @@ export default function Home() {
       </section>
       <section id="portfolio" className="mt-1220 absolute">
         <Portfolio />
+      </section>
+      <section id="contact" className="mt-1570 absolute">
+        <WorkExperiece />
+      </section>
+      <section id="testimonial" className="mt-2260 absolute">
+        <Testimonial />
       </section>
     </main>
   );
