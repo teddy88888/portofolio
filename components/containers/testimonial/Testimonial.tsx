@@ -24,7 +24,7 @@ const testimonies = [
   {
     id: 3,
     name: "John Smith",
-    role: "Lead Developer",
+    role: "Senior Software Engineer",
     image: "/testi3.png",
     text: "Edwin delivered beyond expectations. The interface he built was clean, fast, and user-friendly. Truly a frontend craftsman.",
     stars: 5,
@@ -32,7 +32,7 @@ const testimonies = [
   {
     id: 4,
     name: "Magyver",
-    role: "Lead Developer",
+    role: "CTO at Tech Innovators",
     image: "/testi4.png",
     text: "Working with Edwin was a breeze. He understands complex requirements and turns them into beautiful, functional code.",
     stars: 5,
@@ -53,7 +53,7 @@ export default function TestimonySlider() {
   const current = testimonies[index];
 
   return (
-    <section className="bg-white py-16 px-6 flex flex-col items-center">
+    <section className="bg-white py-16 px-6 scale-100 md:scale-130 justify-center items-center flex flex-col relative md:w-500">
       {/* Badge & Title */}
       <div className="text-center mb-12">
         <span className="inline-block border border-gray-300 rounded-full px-6 py-1 text-sm font-medium mb-4 text-gray-700">
@@ -65,8 +65,8 @@ export default function TestimonySlider() {
       </div>
 
       {/* Testimony Card Container */}
-      <div className="relative w-full max-w-md">
-        <AnimatePresence mode="wait">
+      <div className="  md:flex gap-8 w-96 md:w-2/3 relative">
+        <AnimatePresence mode="wait"> 
           <motion.div
             key={current.id}
             initial={{ opacity: 0, x: 20 }}
@@ -121,7 +121,7 @@ export default function TestimonySlider() {
           <svg
             className="w-6 h-6 transform rotate-180"
             fill="none"
-            stroke="currentColor"
+            stroke="black"
             viewBox="0 0 24 24"
           >
             <path
@@ -140,7 +140,7 @@ export default function TestimonySlider() {
           <svg
             className="w-6 h-6"
             fill="none"
-            stroke="currentColor"
+            stroke="black"
             viewBox="0 0 24 24"
           >
             <path

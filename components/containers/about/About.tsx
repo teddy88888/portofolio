@@ -16,26 +16,18 @@ import html from "@/assets/html.png";
 import js from "@/assets/js.png";
 import react from "@/assets/react.png";
 import ts from "@/assets/ts.png";
+import { AnimatePresence, motion } from "framer-motion";
 
-const technologies = [
-  {
-    src: "/css.png",
-    alt: "CSS3",
-    position: "-left-16 top-40 -translate-y-1/2",
-  },
-  { src: "/js.png", alt: "JavaScript", position: "left-0 top-18" },
-  {
-    src: "/ts.png",
-    alt: "TypeScript",
-    position: "left-1/2 top-8 -translate-x-1/2",
-  },
-  { src: "/html.png", alt: "HTML5", position: "right-0 top-18" },
-  {
-    src: "/react.png",
-    alt: "React",
-    position: "-right-16 top-40 -translate-y-1/2",
-  },
+
+// Data ikon untuk memudahkan mapping posisi
+const techIcons = [
+  { name: 'CSS3', src: '/css.png', position: 'left-[0%] bottom-[20%]' },
+  { name: 'JavaScript', src: '/js.png', position: 'left-[18%] top-[40%]' },
+  { name: 'TypeScript', src: '/ts.png', position: 'left-[42%] top-[30%]' },
+  { name: 'HTML5', src: '/html.png', position: 'right-[15%] top-[40%]' },
+  { name: 'React', src: '/react.png', position: 'right-[0%] bottom-[20%]' },
 ];
+
 // interface IlistTech {
 //   id: number;
 //   icon: StaticImageData;
@@ -71,7 +63,7 @@ const technologies = [
 
 export default function About() {
   return (
-    <main className="p-4  mt-16 h-500 bg-white w-100 md:w-315 flex flex-col items-center justify-center">
+    <main className=" mt-20 h-500 md:h-320 bg-white  w-100 md:w-315 flex flex-col items-center snap-start scroll-ms-6 scale-100 md:scale-140 left-0 md:left-100">
       <div className=" flex flex-col gap-4 items-center mb-4">
         <button
           variant={"outline"}
@@ -84,130 +76,134 @@ export default function About() {
         </h1>
       </div>
       <div className="mt-12 w-90 md:w-full flex flex-col items-center justify-center ">
-        <div className="grid grid-cols-1 md:grid-cols-2">
-        <Card className="bg-blue-500 w-full flex flex-col w-90 h-106 ">
-          <CardHeader className="flex gap-4">
-            <Image
-              src="/profile.png" // Next.js otomatis melihat ke folder public
-              alt="Profile"
-              width={48}
-              height={48}
-            />
-            <div className="text-foreground">
-              <p>Teddy Prasetyo</p>
-              <p className="font-medium">teddy12pd@gmail.com</p>
-            </div>
-          </CardHeader>
-          <CardAction className="flex gap-2 px-2">
-            <Image src="/facebook.png" alt="facebook" width={40} height={40} />
-            <Image
-              src="/instagram.png"
-              alt="instagram"
-              width={40}
-              height={40}
-            />
-            <Image src="/linkedin.png" alt="linkedin" width={40} height={40} />
-            <Image src="/tiktok.png" alt="tiktok" width={40} height={40} />
-          </CardAction>
-          <CardContent className="text-foreground mt-16">
-            <h1 className="text-3xl mb-2">
-              Pushing boundaries through innovation
-            </h1>
-            <p>
-              I create frontend solutions that not only look good but also load
-              fast, work everywhere, and scale well.
-            </p>
-          </CardContent>
-        </Card>
-        <Card className="mt-6 px-6 flex items-center bg-muted w-full w-90">
-          <Image
-            className=" "
-            src="/developher.png"
-            alt="developher"
-            width={249}
-            height={249}
-          />
-        </Card>
-        </div>
-        <Card className="mt-6 text-foreground bg-neutral-900 w-full w-90 ">
-          <CardHeader>
-            <div className="flex gap-4 items-center">
-              <div>
-                <h1 className="text-xl mb-2 font-extrabold">
-                  Check My Portfolio
-                </h1>
-                <p className="text-base-6">
-                  Explore selected works and real-world projects
-                </p>
-              </div>
-              <div>
-                <Button className="w-16 h-16 font-bold hover:bg-gray-500 transition-colors border border-amber-950  text-xl text-black rounded-full border-gray-500 mt-4 ">
-                  <Image
-                    src="/link.png"
-                    alt="link"
-                    height={80}
-                    width={80}
-                  ></Image>
-                </Button>
-              </div>
-            </div>
-            <div>
-              <Image
-                className="mt-10 mb-0 w-100 h-90 bottom-0"
-                src="/PortfolioImage.png"
-                alt="PortfolioImage"
-                width={300}
-                height={300}
-              />
-            </div>
-          </CardHeader>
-        </Card>
-        <Card className="mt-6 h-80 overflow-x: hidden;">
-          <Image
-            src="/yellow.png"
-            alt="yellow"
-            width={40}
-            height={40}
-            className="h-70 w-86 bg-yellow-500 absolute mt-24"
-          />
-          <section className="flex items-center justify-center bg-yellow-500 p-10">
-            {/* Container Utama (Lingkaran Luar) */}
-            <div className=" relative w-[260px] h-[300px] flex items-center justify-center">
-              {/* Lingkaran Dekoratif (Orbit)
-              <div className="absolute inset-0 border border-white/20 rounded-full scale-100"></div>
-              <div className="absolute inset-0 border border-white/20 rounded-full scale-75"></div>
-              <div className="absolute inset-0 border border-white/10 rounded-full scale-50"></div> */}
-
-              {/* Ikon Teknologi yang Melingkar */}
-              {technologies.map((tech, index) => (
-                <div
-                  key={index}
-                  className={`absolute ${tech.position} p-3  rounded-full  `}
-                >
-                  <div className="relative w-14 h-14">
-                    <Image
-                      src={tech.src}
-                      alt={tech.alt}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+        <div className="grid grid-cols-1 md:flex gap-4 ">
+          <Card className="bg-blue-500 w-full flex flex-col w-90 md:w-180 h-106 ">
+            <div className="">
+              <CardHeader className="flex gap-4 ">
+                <Image
+                  src="/profile.png" // Next.js otomatis melihat ke folder public
+                  alt="Profile"
+                  width={48}
+                  height={48}
+                />
+                <div className="text-foreground ">
+                  <p>Teddy Prasetyo</p>
+                  <p className="font-medium mt-4">teddy12pd@gmail.com</p>
                 </div>
-              ))}
+              </CardHeader>
+              <CardAction className="flex gap-2 px-4 mt-4 md:-mt-12">
+                <Image
+                  src="/facebook.png"
+                  alt="facebook"
+                  width={40}
+                  height={40}
+                />
+                <Image
+                  src="/instagram.png"
+                  alt="instagram"
+                  width={40}
+                  height={40}
+                />
+                <Image
+                  src="/linkedin.png"
+                  alt="linkedin"
+                  width={40}
+                  height={40}
+                />
+                <Image src="/tiktok.png" alt="tiktok" width={40} height={40} />
+              </CardAction>
+            </div>
+            <CardContent className="text-foreground mt-16">
+              <h1 className="text-3xl mb-2 md:mt-12  font-bold">
+                Pushing boundaries through innovation
+              </h1>
+              <p>
+                I create frontend solutions that not only look good but also
+                load fast, work everywhere, and scale well.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="mt-6 md:mt-0 px-6 flex items-center justify-center bg-muted w-full w-90 h-106">
+            <Image
+              className=" "
+              src="/developher.png"
+              alt="developher"
+              width={380}
+              height={380}
+            />
+          </Card>
+        </div>
 
-              {/* Teks Pusat */}
-              <div className="text-center top-10 translate-y-1/2">
-                <h2 className="text-3xl md:text-3xl font-bold text-gray-900 leading-tight">
-                  Built with 10+ <br />
-                  <span className="text-gray-800 text-3xl w-12">
-                    Trusted Technologies
-                  </span>
-                </h2>
+        <div className="md:flex gap-8 mt-10 md:w-270 ">
+          <Card className="mt-6  text-foreground bg-neutral-900 w-90 md:w-1500 h-130 ">
+            <CardHeader>
+              <div className="flex gap-4 items-center">
+                <div>
+                  <h1 className="text-xl mb-2 font-extrabold">
+                    Check My Portfolio
+                  </h1>
+                  <p className="text-base-6">
+                    Explore selected works and real-world projects
+                  </p>
+                </div>
+                <div>
+                  <Button className="w-16 h-16 font-bold hover:bg-gray-500 transition-colors border border-amber-950  text-xl text-black rounded-full border-gray-500 mt-4 ">
+                    <Image
+                      src="/link.png"
+                      alt="link"
+                      height={80}
+                      width={80}
+                    ></Image>
+                  </Button>
+                </div>
+              </div>
+              <div>
+                <Image
+                  className="mt-10 mb-0 w-100  bottom-0"
+                  src="/PortfolioImage.png"
+                  alt="PortfolioImage"
+                  width={300}
+                  height={130}
+                />
+              </div>
+            </CardHeader>
+          </Card>
+          <Card className="mt-2 h-90 w-98 md:h-90 overflow-x: hidden;">
+            <div className="flex items-center justify-center p-8 bg-gray-100 min-h-[500px]">
+              {/* Container Utama dengan Background Gradient Orange */}
+              <div className="relative w-[450px] h-[450px] bg-gradient-to-b from-[#F59E0B] to-[#FBBF24] rounded-[40px] shadow-xl overflow-hidden flex flex-col items-center justify-end pb-12">
+                {/* Lingkaran Konsentris (Background Deco) */}
+                <div className="absolute bottom-[-10%] w-[120%] aspect-square border-[1px] border-white/10 rounded-full" />
+                <div className="absolute bottom-[-5%] w-[100%] aspect-square border-[1px] border-white/20 rounded-full bg-white/5" />
+                <div className="absolute bottom-[0%] w-[80%] aspect-square border-[1px] border-white/30 rounded-full bg-white/10" />
+                <div className="absolute bottom-[5%] w-[60%] aspect-square bg-[#FDE68A]/40 rounded-full blur-sm" />
+
+                {/* Pemetaan Ikon Teknologi */}
+                {techIcons.map((tech, index) => (
+                  <div
+                    key={index}
+                    className={`absolute ${tech.position} transform -translate-y-1/2 flex items-center justify-center transition-transform hover:scale-110 duration-300`}
+                  >
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-[#FCE3C1] rounded-full flex items-center justify-center shadow-lg border border-white/20">
+                      <img
+                        src={tech.src}
+                        alt={tech.name}
+                        className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                      />
+                    </div>
+                  </div>
+                ))}
+
+                {/* Teks Utama */}
+                <div className="relative z-10 text-center px-8">
+                  <h2 className="text-[#1A1A1A] text-2xl md:text-3xl font-bold leading-tight">
+                    Built with 10+ Trusted <br /> Technologies
+                  </h2>
+                </div>
               </div>
             </div>
-          </section>
-        </Card>
-        {/* <Card className="mt-8 w-full h-90 mb-6 w-90 flex flex-col items-center justify-center bg-yellow-500">
+          </Card>
+          {/* <Card className="mt-8 w-full h-90 mb-6 w-90 flex flex-col items-center justify-center bg-yellow-500">
           <Image
             src="/yellow.png"
             alt="yellow"
@@ -235,13 +231,10 @@ export default function About() {
             Built with 10+ Trusted Technologies
           </h1>
         </Card> */}
-        <button className="bg-blue-400 hover:bg-blue-700 w-full h-10 mt-26 rounded-2xl flex items-center justify-center">
-          <img 
-          src="/letter.png" 
-          alt="letter" 
-          />
-        </button>
-        
+          <button className="bg-blue-400 mt-42 hover:bg-blue-700 w-full h-10 md:h-120 md:mt-8 rounded-2xl flex items-center justify-center">
+            <img src="/letter.png" alt="letter" />
+          </button>
+        </div>
       </div>
     </main>
   );

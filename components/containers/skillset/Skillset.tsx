@@ -110,7 +110,7 @@ const SkillCard = ({
 };
 export default function Skillset() {
   return (
-    <main className="  bg-blue-400 p-4 mt-16  w-100 md:w-full flex flex-col items-center justify-center">
+    <main className="  bg-blue-400 p-4 mt-16  w-100 md:w-315 scale-100 md:scale-130 flex flex-col items-center justify-center">
       <button className="text-white font-bold mb-4 bg-blue-400 hover:bg-blue-600 h-10 w-20 border rounded-2xl flex items-center justify-center">
         skillset
       </button>
