@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -21,16 +21,28 @@ export default function Home() {
       <section id="hero" className="sticky top-0">
         <Hero />
       </section>
-      <section id=" about " className="mt-0 md:mt-50 left-0 md:left-80 absolute">
+      <section
+        id=" about "
+        className="mt-0 md:mt-50 left-0 md:left-80 absolute"
+      >
         <About />
       </section>
-      <section id="skillset" className="mt-574 md:mt-470 left-0 md:left-80 absolute">
+      <section
+        id="skillset"
+        className="mt-574 md:mt-470 left-0 md:left-80 absolute"
+      >
         <Skillset />
       </section>
-      <section id="experience" className="mt-875 md:mt-790 left-0 md:left-76 absolute">
+      <section
+        id="experience"
+        className="mt-875 md:mt-790 left-0 md:left-76 absolute"
+      >
         <Experience />
       </section>
-      <section id="portfolio" className="mt-1220 md:mt-1110 left-0 md:left-78 absolute">
+      <section
+        id="portfolio"
+        className="mt-1220 md:mt-1110 left-0 md:left-78 absolute"
+      >
         <Portfolio />
       </section>
       <section id="work experience" className="mt-1570 md:mt-1340 absolute">

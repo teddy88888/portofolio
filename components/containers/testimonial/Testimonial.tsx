@@ -97,7 +97,7 @@ export default function TestimonySlider() {
 
             {/* Testimonial Text */}
             <p className="text-gray-700 text-lg md:text-xl leading-relaxed italic mb-10">
-              "{current.text}"
+              &quot;{current.text}&quot;
             </p>
 
             {/* Author Info */}

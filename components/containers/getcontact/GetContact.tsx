@@ -142,7 +142,7 @@ const GetContact: React.FC = () => {
                 Got Your Message!
               </h2>
               <p className="text-gray-500 mb-8">
-                Really appreciate you reaching out. I'll be in touch soon.
+                Really appreciate you reaching out. I&apos;ll be in touch soon.
               </p>
               <button
                 onClick={() => setStatus("idle")}

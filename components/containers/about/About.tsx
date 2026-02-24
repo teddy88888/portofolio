@@ -3,20 +3,7 @@ import Image from "next/image";
 // import Image { StaticImageData } from "next/image";
 import { Card, CardHeader, CardAction, CardContent } from "../../ui/card";
 import { Button } from "../../ui/button";
-import { profile } from "../../public/Profile.png";
-import { facebook } from "../../public/facebook.png";
-import { instagram } from "../../public/instgram.png";
-import linkedin from "../../public/linkedin.png";
-import tiktiok from "../../public/tiktok.png";
-import link from "../../public/link.png";
-import { PortfolioImage } from "../../public/PortfolioImage.png";
-import yellow from "../../public/yellow.png";
-import css from "@/assets/css.png";
-import html from "@/assets/html.png";
-import js from "@/assets/js.png";
-import react from "@/assets/react.png";
-import ts from "@/assets/ts.png";
-import { AnimatePresence, motion } from "framer-motion";
+
 
 
 // Data ikon untuk memudahkan mapping posisi
@@ -66,7 +53,7 @@ export default function About() {
     <main className=" mt-20 h-500 md:h-320 bg-white  w-100 md:w-315 flex flex-col items-center snap-start scroll-ms-6 scale-100 md:scale-140 left-0 md:left-100">
       <div className=" flex flex-col gap-4 items-center mb-4">
         <button
-          variant={"outline"}
+         
           className=" w-22 font-extrabold hover:bg-amber-200 transition-colors border border-amber-950 h-12 text-xl text-black rounded-2xl mt-4 "
         >
           About
