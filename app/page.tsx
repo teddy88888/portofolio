@@ -12,7 +12,6 @@ import WorkExperiece from "../components/containers/work-experience/WorkExperiec
 import Testimonial from "../components/containers/testimonial/Testimonial";
 import Faq from "../components/containers/FAQ/Faq";
 import GetContact from "../components/containers/getcontact/GetContact";
-import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home() {
   return (
