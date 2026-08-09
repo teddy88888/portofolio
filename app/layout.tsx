@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/containers/navbar/Navbar";
 
 
 

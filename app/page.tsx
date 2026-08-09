@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Navbar from "../components/containers/navbar/Navbar";
 import Hero from "../components/containers/hero/Hero";
 import About from "../components/containers/about/About";
