@@ -34,10 +34,10 @@ export default function About() {
           <Card className="w-full bg-blue-500">
             <CardHeader className="flex flex-row items-start gap-4">
               <Image
-                src="/profile.png"
+                src="/tedy.png"
                 alt="Profile"
                 width={48}
-                height={48}
+                height={40}
                 className="rounded-full"
               />
               <div className="text-foreground min-w-0">
@@ -70,8 +70,8 @@ export default function About() {
 
           <Card className="flex min-h-[360px] w-full items-center justify-center bg-muted p-6">
             <Image
-              src="/developher.png"
-              alt="Developer illustration"
+              src="/developer3.png"
+              alt="Developer"
               width={380}
               height={380}
               className="h-auto max-h-[360px] w-full max-w-[380px] object-contain"

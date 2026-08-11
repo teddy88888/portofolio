@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-blue-900">
@@ -9,7 +10,7 @@ export default function Hero() {
           </h1>
 
           <p className="mb-8 max-w-xl text-xl leading-relaxed text-gray-300 sm:text-2xl md:text-3xl">
-            Build fast, accessible, and responsive web experiences that users
+            Builder fast, accessible, and responsive web experiences that users
             love.
           </p>
 
@@ -22,12 +23,12 @@ export default function Hero() {
         </div>
 
         <div className="flex w-full items-end justify-center md:justify-end">
-          <img
-            src="/developer.png"
+          <Image
+            src="/developer2.png"
             alt="Developer illustration"
             width={700}
             height={700}
-            className="h-auto w-full max-w-[620px] object-contain"
+            className="h-auto w-full max-w-155 object-contain"
           />
         </div>
       </div>
