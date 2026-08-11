@@ -14,6 +14,7 @@ import GetContact from "@/components/containers/getcontact/GetContact";
 export default function Home() {
   return (
     <main className="w-full min-w-0 overflow-x-clip">
+      <Navbar />
       <section id="hero" className="relative w-full">
         <Hero />
       </section>

@@ -77,7 +77,7 @@ export default function Experience() {
         <div className="mx-auto mt-10 grid w-full max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
           <ComparisonCard
             title="Working with me"
-            image="/profile.png"
+            image="/tedy.png"
             items={strengths}
             positive
           />

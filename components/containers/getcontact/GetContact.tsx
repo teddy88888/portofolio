@@ -18,14 +18,14 @@ export default function GetContact() {
           <div>
             <div className="mb-8 flex items-center gap-4">
               <img
-                src="/Profile.png"
+                src="/tedy.png"
                 alt="Profile"
                 className="h-12 w-12 rounded-full border-2 border-blue-500 object-cover md:h-16 md:w-16"
               />
               <div>
-                <h3 className="text-lg font-semibold md:text-xl">Edwin Anderson</h3>
+                <h3 className="text-lg font-semibold md:text-xl">Teddy Dewanto</h3>
                 <p className="text-xs text-gray-400 md:text-sm">
-                  edwinanderson@email.com
+                  teddy12pd@email.com
                 </p>
               </div>
             </div>

@@ -9,21 +9,21 @@ const testimonies = [
     name: "Sarah Lim",
     role: "Product Manager at Loopware",
     image: "/testi1.png",
-    text: "Edwin delivered beyond expectations. The interface he built was clean, fast, and user-friendly. Truly a frontend craftsman.",
+    text: "Teddy delivered beyond expectations. The interface he built was clean, fast, and user-friendly. Truly a frontend craftsman.",
   },
   {
     id: 2,
     name: "John Doe",
     role: "Lead Developer",
     image: "/testi2.png",
-    text: "Working with Edwin was a breeze. He understands complex requirements and turns them into beautiful, functional code.",
+    text: "Working with Teddy was a breeze. He understands complex requirements and turns them into beautiful, functional code.",
   },
   {
     id: 3,
     name: "John Smith",
     role: "Senior Software Engineer",
     image: "/testi3.png",
-    text: "Edwin delivered beyond expectations. The interface he built was clean, fast, and user-friendly. Truly a frontend craftsman.",
+    text: "Teddy delivered beyond expectations. The interface he built was clean, fast, and user-friendly. Truly a frontend craftsman.",
   },
   {
     id: 4,
@@ -99,7 +99,7 @@ export default function Testimonial() {
             type="button"
             onClick={previous}
             aria-label="Previous testimonial"
-            className="flex h-14 w-14 items-center justify-center rounded-full border border-gray-200 bg-white shadow-sm hover:bg-gray-50"
+            className="flex h-14 w-14 items-center justify-center rounded-full border border-gray-200 bg-gray-400 shadow-sm hover:bg-gray-500"
           >
             ←
           </button>
@@ -107,7 +107,7 @@ export default function Testimonial() {
             type="button"
             onClick={next}
             aria-label="Next testimonial"
-            className="flex h-14 w-14 items-center justify-center rounded-full border border-gray-200 bg-white shadow-sm hover:bg-gray-50"
+            className="flex h-14 w-14 items-center justify-center rounded-full border border-gray-200 bg-gray-400 shadow-sm hover:bg-gray-500"
           >
             →
           </button>
