@@ -1,164 +1,117 @@
 "use client";
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "../../ui/card";
 
-export default function TimelineItem() {
-  // State untuk melacak apakah sudah diklik atau belum
-  const [isActive, setIsActive] = useState(false);
-// export default function WorkExperiece() {
+import { useState } from "react";
+import { Card, CardContent } from "../../ui/card";
+
+const jobs = [
+  {
+    logo: "/adobe.png",
+    image: "/work1.png",
+    date: "2025 - Present",
+  },
+  {
+    logo: "/dribble.png",
+    image: "/work2.png",
+    date: "2025 - Present",
+  },
+  {
+    logo: "/dropbox.png",
+    image: "/work3.png",
+    date: "2025 - Present",
+  },
+  {
+    logo: "/paypal2.png",
+    image: "/work4.png",
+    date: "2025 - Present",
+  },
+];
+
+const description =
+  "Builds responsive and high-performance web applications with clean, maintainable code. Expert in translating UI/UX designs into pixel-perfect interfaces using modern frameworks. Focused on optimizing performance, accessibility, and seamless user experiences.";
+
+export default function WorkExperiece() {
+  const [active, setActive] = useState(0);
+
   return (
-    <main className="bg-white w-100 h-690 md:w-full h-350 flex flex-col items-center snap-start scroll-ms-6">
-      <button className="mt-16 text-black font-bold bg-white-400 hover:bg-gray-100 h-8 w-38 border border-black rounded-xl flex items-center justify-center">
-        Work Experience
-      </button>
-      <h1 className="text-2xl font-extrabold text-gray-800 mt-4 flex items-center justify-center text-center w-82">
-        A timeline of companies and roles that helped shape my skills.
-      </h1>
+    <section className="w-full overflow-hidden bg-white py-16 sm:py-20 md:py-24">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <span className="inline-flex rounded-xl border border-black px-4 py-2 font-bold text-black">
+            Work Experience
+          </span>
+          <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-extrabold text-gray-800 sm:text-4xl">
+            A timeline of companies and roles that helped shape my skills.
+          </h2>
+        </div>
 
-      <Card className="max-w-max  md:flex gap-6  mt-12 py-4 px-8 bg-gray-100 text-2xl">
-        <div
-          onClick={() => setIsActive(!isActive)} // Fungsi ganti warna saat klik
-          className={`absolute left-[2px] w-5 h-5 cursor-pointer rounded-full border-4 transition-all duration-300
-            ${
-              isActive
-                ? "bg-blue-500 border-blue-200 shadow-[0_0_0_4px_rgba(59,130,246,0.1)]" // Warna Biru
-                : "bg-gray-400 border-gray-200 shadow-none" // Warna Abu-abu (Default)
-            }`}
-        >
-          {/* Efek lingkaran putih di dalam */}
-          <div className="w-full h-full rounded-full border-2 border-white"></div>
-        </div>
-        <div className="flex flex-col md:flex-row gap-24">
-          <div className="px-6">
-            <img src="/work1.png" alt="work1" width={3000}/>
-          </div>
-          <div>
-            <div className=" px-6">
-              <img src="/schedule.png" alt="" />
-              <p>2025 - Present</p>
-            </div>
-            <img src="/adobe.png" alt="adobe" className="px-6 w-40 h-11" />
-            <CardContent className="">
-              <p className="text-gray-700 font-bold mb-4">Fronted Developer</p>
-              <p className="text-gray-700">
-                Builds responsive and high-performance web applications with
-                clean, maintainable code. Expert in translating UI/UX designs
-                into pixel-perfect interfaces using modern frameworks. Focused
-                on optimizing performance, accessibility, and seamless user
-                experiences
-              </p>
-            </CardContent>
-          </div>
-        </div>
-      </Card>
-      <Card className="max-w-max  md:flex gap-6  mt-12 py-4 px-8 bg-gray-100 text-2xl">
-        <div
-          onClick={() => setIsActive(!isActive)} // Fungsi ganti warna saat klik
-          className={`absolute left-[2px] w-5 h-5 cursor-pointer rounded-full border-4 transition-all duration-300
-            ${
-              isActive
-                ? "bg-blue-500 border-blue-200 shadow-[0_0_0_4px_rgba(59,130,246,0.1)]" // Warna Biru
-                : "bg-gray-400 border-gray-200 shadow-none" // Warna Abu-abu (Default)
-            }`}
-        >
-          {/* Efek lingkaran putih di dalam */}
-          <div className="w-full h-full rounded-full border-2 border-white"></div>
-        </div>
-        <div className="flex flex-col md:flex-row gap-24">
-          <div>
-            <div className="flex  gap-2 px-6">
-              <img src="/schedule.png" alt="schedule" />
-              <p>2025 - Present</p>
-            </div>
-            <img src="/dribble.png" alt="dribble" className="px-6 w-36 h-6" />
-            <CardContent className="">
-              <p className="text-gray-700 font-bold mb-4">Fronted Developer</p>
-              <p className="text-gray-700">
-                Builds responsive and high-performance web applications with
-                clean, maintainable code. Expert in translating UI/UX designs
-                into optimizing performance, accessibility, and seamless user
-                experiences
-              </p>
-            </CardContent>
-          </div>
-          <div>
-            <img src="/work2.png" alt="work1" width={2000} />
+        <div className="relative mx-auto mt-10 max-w-5xl">
+          <div className="absolute bottom-0 left-4 top-0 w-px bg-gray-300 md:left-1/2 md:-translate-x-1/2" />
+
+          <div className="space-y-8">
+            {jobs.map((job, index) => (
+              <Card
+                key={job.image}
+                className={`relative w-full overflow-hidden border-0 bg-gray-100 shadow-sm ${
+                  active === index ? "ring-2 ring-blue-400" : ""
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => setActive(index)}
+                  aria-label={`Select experience ${index + 1}`}
+                  className={`absolute left-2 top-8 z-10 h-5 w-5 rounded-full border-4 transition ${
+                    active === index
+                      ? "border-blue-200 bg-blue-500"
+                      : "border-gray-200 bg-gray-400"
+                  }`}
+                />
+
+                <div className="grid grid-cols-1 gap-6 p-6 pl-10 md:grid-cols-2 md:p-8 md:pl-12">
+                  <div
+                    className={index % 2 === 0 ? "md:order-1" : "md:order-2"}
+                  >
+                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <img
+                        src="/schedule.png"
+                        alt=""
+                        className="h-5 w-5 object-contain"
+                      />
+                      <span>{job.date}</span>
+                    </div>
+
+                    <img
+                      src={job.logo}
+                      alt=""
+                      className="mt-4 h-10 w-auto max-w-40 object-contain object-left"
+                    />
+
+                    <CardContent className="px-0 pt-5">
+                      <h3 className="font-bold text-gray-800">
+                        Frontend Developer
+                      </h3>
+                      <p className="mt-3 text-base leading-relaxed text-gray-700">
+                        {description}
+                      </p>
+                    </CardContent>
+                  </div>
+
+                  <div
+                    className={`flex items-center justify-center ${
+                      index % 2 === 0 ? "md:order-2" : "md:order-1"
+                    }`}
+                  >
+                    <img
+                      src={job.image}
+                      alt=""
+                      className="h-auto max-h-64 w-full max-w-md object-contain"
+                    />
+                  </div>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
-      </Card>
-      <Card className="max-w-max  md:flex gap-6 mt-12 py-4 px-8 bg-gray-100 text-2xl">
-        <div
-          onClick={() => setIsActive(!isActive)} // Fungsi ganti warna saat klik
-          className={`absolute left-[2px] w-5 h-5 cursor-pointer rounded-full border-4 transition-all duration-300
-            ${
-              isActive
-                ? "bg-blue-500 border-blue-200 shadow-[0_0_0_4px_rgba(59,130,246,0.1)]" // Warna Biru
-                : "bg-gray-400 border-gray-200 shadow-none" // Warna Abu-abu (Default)
-            }`}
-        >
-          {/* Efek lingkaran putih di dalam */}
-          <div className="w-full h-full rounded-full border-2 border-white"></div>
-        </div>
-        <div className="flex flex-col md:flex-row gap-24">
-          <div>
-            <img src="/work3.png" alt="work1" width={3000} />
-          </div>
-          <div>
-            <div className="flex  gap-2 px-6">
-              <img src="/schedule.png" alt="schedule" />
-              <p>2025 - Present</p>
-            </div>
-            <img src="/dropbox.png" alt="dropbox" className="px-6 w-40 h-11" />
-            <CardContent className="">
-              <p className="text-gray-700 font-bold mb-4">Fronted Developer</p>
-              <p className="text-gray-700">
-                Builds responsive and high-performance web applications with
-                clean, maintainable code. Expert in translating UI/UX designs
-                into pixel-perfect interfaces using modern frameworks. Focused
-                on optimizing performance, accessibility, and seamless user
-                experiences
-              </p>
-            </CardContent>
-          </div>
-        </div>
-      </Card>
-      <Card className="max-w-max  md:flex gap-6  mt- py-4 px-8 bg-gray-100 text-2xl">
-        <div
-          onClick={() => setIsActive(!isActive)} // Fungsi ganti warna saat klik
-          className={`absolute left-[2px] w-5 h-5 cursor-pointer rounded-full border-4 transition-all duration-300
-            ${
-              isActive
-                ? "bg-blue-500 border-blue-200 shadow-[0_0_0_4px_rgba(59,130,246,0.1)]" // Warna Biru
-                : "bg-gray-400 border-gray-200 shadow-none" // Warna Abu-abu (Default)
-            }`}
-        >
-          {/* Efek lingkaran putih di dalam */}
-          <div className="w-full h-full rounded-full border-2 border-white"></div>
-        </div>
-        <div className="flex flex-col md:flex-row gap-24">
-          <div>
-            <div className="flex  gap-2 px-6">
-              <img src="/schedule.png" alt="schedule" />
-              <p>2025 - Present</p>
-            </div>
-            <img src="/paypal2.png" alt="paypal" className="px-6 w-40 h-11" />
-            <CardContent className="">
-              <p className="text-gray-700 font-bold mb-4">Fronted Developer</p>
-              <p className="text-gray-700">
-                Builds responsive and high-performance web applications with
-                clean, maintainable code. Expert in translating UI/UX designs
-                into pixel-perfect interfaces using modern frameworks. Focused
-                on optimizing performance, accessibility, and seamless user
-                experiences
-              </p>
-            </CardContent>
-          </div>{" "}
-          <div>
-            <img src="/work4.png" alt="work1" width={3000} />
-          </div>
-        </div>
-      </Card>
-    </main>
+      </div>
+    </section>
   );
 }

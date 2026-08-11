@@ -1,58 +1,57 @@
 "use client";
 
 import React from "react";
-import Navbar from "../components/containers/navbar/Navbar";
-import Hero from "../components/containers/hero/Hero";
-import About from "../components/containers/about/About";
-import Skillset from "../components/containers/skillset/Skillset";
-import Experience from "../components/containers/experience/Experience";
-import Portfolio from "../components/containers/portfolio/Portfolio";
-import WorkExperiece from "../components/containers/work-experience/WorkExperiece";
-import Testimonial from "../components/containers/testimonial/Testimonial";
-import Faq from "../components/containers/FAQ/Faq";
-import GetContact from "../components/containers/getcontact/GetContact";
-
+import Navbar from "@/components/containers/navbar/Navbar";
+import Hero from "@/components/containers/hero/Hero";
+import About from "@/components/containers/about/About";
+import Skillset from "@/components/containers/skillset/Skillset";
+import Experience from "@/components/containers/experience/Experience";
+import Portfolio from "@/components/containers/portfolio/Portfolio";
+import Testimonial from "@/components/containers/testimonial/Testimonial";
+import WorkExperience from "@/components/containers/work-experience/WorkExperiece";
+import Faq from "@/components/containers/FAQ/Faq";
+import GetContact from "@/components/containers/getcontact/GetContact";
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      <section id="hero" className="sticky top-0">
+    <main className="w-full min-w-0 overflow-x-clip">
+      <section id="hero" className="relative w-full">
         <Hero />
       </section>
+
       <section
-        id=" about "
-        className="mt-0 md:mt-50 left-0 md:left-80 absolute"
+        id="about"
+        className="relative w-full overflow-hidden bg-white py-20 md:py-28"
       >
-        <About />
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <About />
+        </div>
       </section>
-      <section
-        id="skillset"
-        className="mt-574 md:mt-470 left-0 md:left-80 absolute"
-      >
+
+      <section id="skill" className="relative w-full">
         <Skillset />
       </section>
-      <section
-        id="experience"
-        className="mt-875 md:mt-790 left-0 md:left-76 absolute"
-      >
+
+      <section id="experience" className="relative w-full">
         <Experience />
       </section>
-      <section
-        id="portfolio"
-        className="mt-1220 md:mt-1110 left-0 md:left-78 absolute"
-      >
+
+      <section id="project" className="relative w-full">
         <Portfolio />
       </section>
-      <section id="work experience" className="mt-1570 md:mt-1340 absolute">
-        <WorkExperiece />
+
+      <section id="work-experience" className="relative w-full">
+        <WorkExperience />
       </section>
-      <section id="testimonial" className="mt-2480 md:mt-2000 absolute">
+
+      <section id="testimonial" className="relative w-full">
         <Testimonial />
       </section>
-      <section id="faq" className="mt-2680 md:mt-2220 absolute">
+
+      <section id="faq" className="relative w-full">
         <Faq />
       </section>
-      <section id="getcontact" className="mt-2850 md:mt-2460 absolute">
+
+      <section id="contact" className="relative w-full">
         <GetContact />
       </section>
     </main>

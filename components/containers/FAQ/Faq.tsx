@@ -1,8 +1,7 @@
-"use client"; // Tambahkan baris ini di paling atas
+"use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
-// Data FAQ
 const faqData = [
   {
     question: "What technologies do you use?",
@@ -31,63 +30,54 @@ const faqData = [
   },
 ];
 
-const FAQSection: React.FC = () => {
+export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className=" w-96 bg-white rounded-[32px] p-8 shadow-sm border border-gray-100  md:scale-150 md:mt-40 md:w-300 md:left-80 absolute">
-      <header className="mb-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-1">
-          Frequently Asked Question
-        </h2>
-        <p className="text-gray-500 text-sm">
-          Everything you need to know about working with me.
-        </p>
-      </header>
+    <section className="w-full overflow-hidden bg-gray-50 py-16 sm:py-20 md:py-24">
+      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-[32px] border border-gray-100 bg-white p-6 shadow-sm sm:p-8">
+          <header className="mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">
+              Frequently Asked Question
+            </h2>
+            <p className="mt-1 text-sm text-gray-500">
+              Everything you need to know about working with me.
+            </p>
+          </header>
 
-      <div className="space-y-2">
-        {faqData.map((item, index) => (
-          <div key={index} className="border-b border-gray-100 last:border-0">
-            <button
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              className="w-full flex justify-between items-center py-4 text-left"
-            >
-              <span
-                className={`font-semibold ${openIndex === index ? "text-blue-600" : "text-gray-800"}`}
-              >
-                {item.question}
-              </span>
-              <span
-                className={`transform transition-transform ${openIndex === index ? "rotate-180" : ""}`}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2.5}
-                  stroke="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                  />
-                </svg>
-              </span>
-            </button>
-            <div
-              className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-40 pb-4 opacity-100" : "max-h-0 opacity-0"}`}
-            >
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {item.answer}
-              </p>
-            </div>
+          <div className="space-y-2">
+            {faqData.map((item, index) => {
+              const isOpen = openIndex === index;
+
+              return (
+                <div key={item.question} className="border-b border-gray-100 last:border-0">
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    className="flex w-full items-center justify-between gap-4 py-4 text-left"
+                  >
+                    <span className={`font-semibold ${isOpen ? "text-blue-600" : "text-gray-800"}`}>
+                      {item.question}
+                    </span>
+                    <span className={`shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}>
+                      ↓
+                    </span>
+                  </button>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      isOpen ? "max-h-40 pb-4 opacity-100" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="text-sm leading-relaxed text-gray-600">{item.answer}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default FAQSection;
+}

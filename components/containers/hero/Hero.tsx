@@ -1,28 +1,36 @@
 export default function Hero() {
   return (
-    <main className=" p-4   bg-blue-900 drop-shadow-blue-700 w-full">
-      <div className="md:flex gap-4 ">
-        <div>
-        <h1 className="font-bold text-[44px]/12 md:text-[66px]/20  text-whitew-80 md:w-120 mb-8">
-          <span className="text-black bg-amber-500">Crafting</span> Interfaces,
-          One Line at a Time
-        </h1>
-        <p className=" text-gray-300 text-2xl md:text-3xl w-80 md:w-190 mb-8">
-          Build fast, accessible, and responsive web experiences that users
-          love.
-        </p>
-        <button className="bg-amber-50 h-12 w-full md:w-40 text-2xl text-black font-bold  rounded-4xl px-4 py-2  mt-4">
-          say hello
-        </button>
+    <section className="relative w-full overflow-hidden bg-blue-900">
+      <div className="mx-auto grid min-h-[620px] w-full max-w-7xl grid-cols-1 items-center gap-8 px-4 pb-12 pt-28 sm:px-6 md:grid-cols-2 md:pb-16 md:pt-28 lg:px-8">
+        <div className="relative z-10 max-w-2xl">
+          <h1 className="mb-8 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
+            <span className="bg-amber-500 px-1 text-black">Crafting</span>{" "}
+            Interfaces, One Line at a Time
+          </h1>
+
+          <p className="mb-8 max-w-xl text-xl leading-relaxed text-gray-300 sm:text-2xl md:text-3xl">
+            Build fast, accessible, and responsive web experiences that users
+            love.
+          </p>
+
+          <button
+            type="button"
+            className="h-12 w-full rounded-full bg-amber-50 px-6 text-xl font-bold text-black transition hover:bg-amber-200 sm:w-40"
+          >
+            say hello
+          </button>
         </div>
-        <div className="mt-4 flex justify-center text-gray-300">
-          <img 
-          src="/developer.png" 
-          alt="developer" 
-          width={700}
+
+        <div className="flex w-full items-end justify-center md:justify-end">
+          <img
+            src="/developer.png"
+            alt="Developer illustration"
+            width={700}
+            height={700}
+            className="h-auto w-full max-w-[620px] object-contain"
           />
         </div>
       </div>
-    </main>
+    </section>
   );
 }

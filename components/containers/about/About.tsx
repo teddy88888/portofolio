@@ -1,228 +1,148 @@
-import React from "react";
 import Image from "next/image";
-// import Image { StaticImageData } from "next/image";
-import { Card, CardHeader, CardAction, CardContent } from "../../ui/card";
+import { Card, CardAction, CardContent, CardHeader } from "../../ui/card";
 import { Button } from "../../ui/button";
 
-
-
-// Data ikon untuk memudahkan mapping posisi
 const techIcons = [
-  { name: 'CSS3', src: '/css.png', position: 'left-[0%] bottom-[20%]' },
-  { name: 'JavaScript', src: '/js.png', position: 'left-[18%] top-[40%]' },
-  { name: 'TypeScript', src: '/ts.png', position: 'left-[42%] top-[30%]' },
-  { name: 'HTML5', src: '/html.png', position: 'right-[15%] top-[40%]' },
-  { name: 'React', src: '/react.png', position: 'right-[0%] bottom-[20%]' },
+  { name: "CSS3", src: "/css.png", position: "left-[4%] bottom-[20%]" },
+  { name: "JavaScript", src: "/js.png", position: "left-[18%] top-[40%]" },
+  { name: "TypeScript", src: "/ts.png", position: "left-[42%] top-[30%]" },
+  { name: "HTML5", src: "/html.png", position: "right-[15%] top-[40%]" },
+  { name: "React", src: "/react.png", position: "right-[4%] bottom-[20%]" },
 ];
-
-// interface IlistTech {
-//   id: number;
-//   icon: StaticImageData;
-//   position: string;
-// }
-// const listTech: IlistTech[] = [
-//   {
-//     id: 1,
-//     icon: css,
-//     position: "bottom-20 left-0",
-//   },
-//   {
-//     id: 2,
-//     icon: js,
-//     position: "bottom-48 left-10",
-//   },
-//   {
-//     id: 3,
-//     icon: ts,
-//     position: "bottom-60 justify-center ",
-//   },
-//   {
-//     id: 4,
-//     icon: html,
-//     position: "bottom-48 right-10",
-//   },
-//   {
-//     id: 5,
-//     icon: react,
-//     position: "bottom-20 right-0",
-//   },
-// ];
 
 export default function About() {
   return (
-    <main className=" mt-20 h-500 md:h-320 bg-white  w-100 md:w-315 flex flex-col items-center snap-start scroll-ms-6 scale-100 md:scale-140 left-0 md:left-100">
-      <div className=" flex flex-col gap-4 items-center mb-4">
-        <button
-         
-          className=" w-22 font-extrabold hover:bg-amber-200 transition-colors border border-amber-950 h-12 text-xl text-black rounded-2xl mt-4 "
-        >
-          About
-        </button>
-        <h1 className="font-extrabold text-[44px]/12 text-black bg-white text-center">
-          The Developer Behind the Pixel
-        </h1>
-      </div>
-      <div className="mt-12 w-90 md:w-full flex flex-col items-center justify-center ">
-        <div className="grid grid-cols-1 md:flex gap-4 ">
-          <Card className="bg-blue-500 w-full flex flex-col w-90 md:w-180 h-106 ">
-            <div className="">
-              <CardHeader className="flex gap-4 ">
-                <Image
-                  src="/profile.png" // Next.js otomatis melihat ke folder public
-                  alt="Profile"
-                  width={48}
-                  height={48}
-                />
-                <div className="text-foreground ">
-                  <p>Teddy Prasetyo</p>
-                  <p className="font-medium mt-4">teddy12pd@gmail.com</p>
-                </div>
-              </CardHeader>
-              <CardAction className="flex gap-2 px-4 mt-4 md:-mt-12">
-                <Image
-                  src="/facebook.png"
-                  alt="facebook"
-                  width={40}
-                  height={40}
-                />
-                <Image
-                  src="/instagram.png"
-                  alt="instagram"
-                  width={40}
-                  height={40}
-                />
-                <Image
-                  src="/linkedin.png"
-                  alt="linkedin"
-                  width={40}
-                  height={40}
-                />
-                <Image src="/tiktok.png" alt="tiktok" width={40} height={40} />
+    <section
+      id="about"
+      className="relative w-full overflow-hidden bg-white py-16 sm:py-20 md:py-24"
+    >
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+          <button
+            type="button"
+            className="h-12 rounded-2xl border border-amber-950 px-5 text-xl font-extrabold text-black transition hover:bg-amber-100"
+          >
+            About
+          </button>
+
+          <h2 className="mt-5 text-4xl font-extrabold leading-tight text-black sm:text-5xl">
+            The Developer Behind the Pixel
+          </h2>
+        </div>
+
+        <div className="mx-auto mt-12 grid w-full max-w-6xl grid-cols-1 gap-6 lg:grid-cols-[1.25fr_0.75fr]">
+          <Card className="w-full bg-blue-500">
+            <CardHeader className="flex flex-row items-start gap-4">
+              <Image
+                src="/profile.png"
+                alt="Profile"
+                width={48}
+                height={48}
+                className="rounded-full"
+              />
+              <div className="text-foreground min-w-0">
+                <p>Teddy Prasetyo</p>
+                <p className="mt-2 break-all font-medium">teddy12pd@gmail.com</p>
+              </div>
+              <CardAction className="ml-auto flex shrink-0 gap-2">
+                {["facebook", "instagram", "linkedin", "tiktok"].map((name) => (
+                  <Image
+                    key={name}
+                    src={`/${name}.png`}
+                    alt={name}
+                    width={32}
+                    height={32}
+                  />
+                ))}
               </CardAction>
-            </div>
-            <CardContent className="text-foreground mt-16">
-              <h1 className="text-3xl mb-2 md:mt-12  font-bold">
+            </CardHeader>
+
+            <CardContent className="pt-6">
+              <h3 className="mb-2 text-2xl font-bold sm:text-3xl">
                 Pushing boundaries through innovation
-              </h1>
+              </h3>
               <p>
                 I create frontend solutions that not only look good but also
                 load fast, work everywhere, and scale well.
               </p>
             </CardContent>
           </Card>
-          <Card className="mt-6 md:mt-0 px-6 flex items-center justify-center bg-muted w-full w-90 h-106">
+
+          <Card className="flex min-h-[360px] w-full items-center justify-center bg-muted p-6">
             <Image
-              className=" "
               src="/developher.png"
-              alt="developher"
+              alt="Developer illustration"
               width={380}
               height={380}
+              className="h-auto max-h-[360px] w-full max-w-[380px] object-contain"
             />
           </Card>
         </div>
 
-        <div className="md:flex gap-8 mt-10 md:w-270 ">
-          <Card className="mt-6  text-foreground bg-neutral-900 w-90 md:w-1500 h-130 ">
+        <div className="mx-auto mt-8 grid w-full max-w-6xl grid-cols-1 gap-6 lg:grid-cols-[1.1fr_1fr_0.45fr]">
+          <Card className="w-full overflow-hidden bg-neutral-900 text-white">
             <CardHeader>
-              <div className="flex gap-4 items-center">
+              <div className="flex items-center justify-between gap-4">
                 <div>
-                  <h1 className="text-xl mb-2 font-extrabold">
-                    Check My Portfolio
-                  </h1>
-                  <p className="text-base-6">
+                  <h3 className="text-xl font-extrabold">Check My Portfolio</h3>
+                  <p className="mt-1 text-sm text-gray-300">
                     Explore selected works and real-world projects
                   </p>
                 </div>
-                <div>
-                  <Button className="w-16 h-16 font-bold hover:bg-gray-500 transition-colors border border-amber-950  text-xl text-black rounded-full border-gray-500 mt-4 ">
-                    <Image
-                      src="/link.png"
-                      alt="link"
-                      height={80}
-                      width={80}
-                    ></Image>
-                  </Button>
-                </div>
+                <Button className="h-14 w-14 shrink-0 rounded-full">
+                  <Image src="/link.png" alt="Open portfolio" height={32} width={32} />
+                </Button>
               </div>
-              <div>
-                <Image
-                  className="mt-10 mb-0 w-100  bottom-0"
-                  src="/PortfolioImage.png"
-                  alt="PortfolioImage"
-                  width={300}
-                  height={130}
-                />
-              </div>
+              <Image
+                className="mt-8 h-auto w-full object-contain"
+                src="/PortfolioImage.png"
+                alt="Portfolio preview"
+                width={600}
+                height={260}
+              />
             </CardHeader>
           </Card>
-          <Card className="mt-2 h-90 w-98 md:h-90 overflow-x: hidden;">
-            <div className="flex items-center justify-center p-8 bg-gray-100 min-h-[500px]">
-              {/* Container Utama dengan Background Gradient Orange */}
-              <div className="relative w-[450px] h-[450px] bg-gradient-to-b from-[#F59E0B] to-[#FBBF24] rounded-[40px] shadow-xl overflow-hidden flex flex-col items-center justify-end pb-12">
-                {/* Lingkaran Konsentris (Background Deco) */}
-                <div className="absolute bottom-[-10%] w-[120%] aspect-square border-[1px] border-white/10 rounded-full" />
-                <div className="absolute bottom-[-5%] w-[100%] aspect-square border-[1px] border-white/20 rounded-full bg-white/5" />
-                <div className="absolute bottom-[0%] w-[80%] aspect-square border-[1px] border-white/30 rounded-full bg-white/10" />
-                <div className="absolute bottom-[5%] w-[60%] aspect-square bg-[#FDE68A]/40 rounded-full blur-sm" />
 
-                {/* Pemetaan Ikon Teknologi */}
-                {techIcons.map((tech, index) => (
-                  <div
-                    key={index}
-                    className={`absolute ${tech.position} transform -translate-y-1/2 flex items-center justify-center transition-transform hover:scale-110 duration-300`}
-                  >
-                    <div className="w-16 h-16 md:w-20 md:h-20 bg-[#FCE3C1] rounded-full flex items-center justify-center shadow-lg border border-white/20">
-                      <img
-                        src={tech.src}
-                        alt={tech.name}
-                        className="w-10 h-10 md:w-12 md:h-12 object-contain"
-                      />
-                    </div>
+          <Card className="relative w-full overflow-hidden bg-gray-100 p-4">
+            <div className="relative mx-auto aspect-square w-full max-w-[420px] overflow-hidden rounded-[40px] bg-gradient-to-b from-[#F59E0B] to-[#FBBF24] shadow-xl">
+              <div className="absolute bottom-[-10%] left-1/2 aspect-square w-[120%] -translate-x-1/2 rounded-full border border-white/10" />
+              <div className="absolute bottom-[-5%] left-1/2 aspect-square w-full -translate-x-1/2 rounded-full border border-white/20 bg-white/5" />
+              <div className="absolute bottom-0 left-1/2 aspect-square w-[80%] -translate-x-1/2 rounded-full border border-white/30 bg-white/10" />
+              <div className="absolute bottom-[5%] left-1/2 aspect-square w-[60%] -translate-x-1/2 rounded-full bg-[#FDE68A]/40 blur-sm" />
+
+              {techIcons.map((tech) => (
+                <div
+                  key={tech.name}
+                  className={`absolute ${tech.position} flex -translate-y-1/2 items-center justify-center transition-transform duration-300 hover:scale-110`}
+                >
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-[#FCE3C1] shadow-lg sm:h-16 sm:w-16">
+                    <img
+                      src={tech.src}
+                      alt={tech.name}
+                      className="h-9 w-9 object-contain"
+                    />
                   </div>
-                ))}
-
-                {/* Teks Utama */}
-                <div className="relative z-10 text-center px-8">
-                  <h2 className="text-[#1A1A1A] text-2xl md:text-3xl font-bold leading-tight">
-                    Built with 10+ Trusted <br /> Technologies
-                  </h2>
                 </div>
+              ))}
+
+              <div className="absolute inset-x-0 bottom-10 z-10 px-6 text-center">
+                <h3 className="text-2xl font-bold leading-tight text-[#1A1A1A]">
+                  Built with 10+ Trusted
+                  <br />
+                  Technologies
+                </h3>
               </div>
             </div>
           </Card>
-          {/* <Card className="mt-8 w-full h-90 mb-6 w-90 flex flex-col items-center justify-center bg-yellow-500">
-          <Image
-            src="/yellow.png"
-            alt="yellow"
-            width={40}
-            height={40}
-            className="h-70 w-90 mt-10 bg-yellow-500 absolute mb-0"
-          />
-          {listTech.map((content) => {
-            return (
-              <div
-                key={content.id}
-                className={`absolute h-15 w-16 rounded-full flex justify-center ${content.position}`}
-              >
-                <Image
-                  className="mt-0 h-20 w-20"
-                  src={content.icon}
-                  alt="css"
-                  width={0}
-                  height={0}
-                />
-              </div>
-            );
-          })}
-          <h1 className=" mt-30 font-bold text-2xl text-center w-60 flex items-center justify-center mx-auto relative text-black">
-            Built with 10+ Trusted Technologies
-          </h1>
-        </Card> */}
-          <button className="bg-blue-400 mt-42 hover:bg-blue-700 w-full h-10 md:h-120 md:mt-8 rounded-2xl flex items-center justify-center">
-            <img src="/letter.png" alt="letter" />
+
+          <button
+            type="button"
+            className="flex min-h-[160px] w-full items-center justify-center rounded-2xl bg-blue-400 p-6 transition hover:bg-blue-500 lg:min-h-full"
+          >
+            <img src="/letter.png" alt="Contact" className="max-h-40 w-auto object-contain" />
           </button>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
