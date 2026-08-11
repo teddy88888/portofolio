@@ -32,19 +32,26 @@ export default function About() {
 
         <div className="mx-auto mt-12 grid w-full max-w-6xl grid-cols-1 gap-6 lg:grid-cols-[1.25fr_0.75fr]">
           <Card className="w-full bg-blue-500">
-            <CardHeader className="flex flex-row items-start gap-4">
-              <Image
-                src="/tedy.png"
-                alt="Profile"
-                width={48}
-                height={40}
-                className="rounded-full"
-              />
-              <div className="text-foreground min-w-0">
-                <p>Teddy Prasetyo</p>
-                <p className="mt-2 break-all font-medium">teddy12pd@gmail.com</p>
+            <CardHeader className="flex flex-col items-start gap-4 sm:flex-row sm:items-start">
+              <div className="flex min-w-0 items-start gap-4">
+                <Image
+                  src="/tedy.png"
+                  alt="Profile"
+                  width={48}
+                  height={48}
+                  className="shrink-0 rounded-full"
+                />
+
+                <div className="min-w-0">
+                  <p className="font-medium">Teddy Prasetyo</p>
+
+                  <p className="mt-0 break-all font-medium">
+                    teddy12pd@gmail.com
+                  </p>
+                </div>
               </div>
-              <CardAction className="ml-auto flex shrink-0 gap-2">
+
+              <CardAction className="flex items-center gap-2">
                 {["facebook", "instagram", "linkedin", "tiktok"].map((name) => (
                   <Image
                     key={name}
@@ -90,7 +97,12 @@ export default function About() {
                   </p>
                 </div>
                 <Button className="h-14 w-14 shrink-0 rounded-full">
-                  <Image src="/link.png" alt="Open portfolio" height={32} width={32} />
+                  <Image
+                    src="/link.png"
+                    alt="Open portfolio"
+                    height={32}
+                    width={32}
+                  />
                 </Button>
               </div>
               <Image
@@ -139,7 +151,11 @@ export default function About() {
             type="button"
             className="flex min-h-[160px] w-full items-center justify-center rounded-2xl bg-blue-400 p-6 transition hover:bg-blue-500 lg:min-h-full"
           >
-            <img src="/letter.png" alt="Contact" className="max-h-40 w-auto object-contain" />
+            <img
+              src="/letter.png"
+              alt="Contact"
+              className="max-h-40 w-auto object-contain"
+            />
           </button>
         </div>
       </div>
